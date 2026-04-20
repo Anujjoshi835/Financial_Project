@@ -511,20 +511,18 @@ def main():
         st.plotly_chart(fig_bar, use_container_width=True)
 
     with col_table:
-        table_html = """
-        <table class="styled-table">
-            <thead><tr>
-                <th>Model</th><th>VaR %</th><th>₹ Value</th>
-            </tr></thead><tbody>
-        """
+        table_html = """<table class="styled-table">
+<thead><tr>
+<th>Model</th><th>VaR %</th><th>₹ Value</th>
+</tr></thead><tbody>
+"""
         for name in names:
             m = models[name]
-            table_html += f"""
-            <tr>
-                <td><span style="color:{m['color']};font-weight:600;">●</span> {name}</td>
-                <td style="font-weight:600;">{m['var_pct']:.4f}%</td>
-                <td>₹{m['var_val']:,.2f}</td>
-            </tr>"""
+            table_html += f"""<tr>
+<td><span style="color:{m['color']};font-weight:600;">●</span> {name}</td>
+<td style="font-weight:600;">{m['var_pct']:.4f}%</td>
+<td>₹{m['var_val']:,.2f}</td>
+</tr>"""
         table_html += "</tbody></table>"
         st.markdown(table_html, unsafe_allow_html=True)
 
@@ -673,21 +671,19 @@ def main():
 
         with col_crisis_detail:
             st.markdown("##### Crisis Period Details")
-            crisis_table = """
-            <table class="styled-table">
-                <thead><tr>
-                    <th>Period</th><th>Days</th><th>Hist VaR</th><th>Param VaR</th>
-                </tr></thead><tbody>
-            """
+            crisis_table = """<table class="styled-table">
+<thead><tr>
+<th>Period</th><th>Days</th><th>Hist VaR</th><th>Param VaR</th>
+</tr></thead><tbody>
+"""
             for label in labels:
                 c = crisis_results[label]
-                crisis_table += f"""
-                <tr>
-                    <td style="font-weight:600;">{label}</td>
-                    <td>{c['days']}</td>
-                    <td>{c['hist']:.4f}%</td>
-                    <td>{c['param']:.4f}%</td>
-                </tr>"""
+                crisis_table += f"""<tr>
+<td style="font-weight:600;">{label}</td>
+<td>{c['days']}</td>
+<td>{c['hist']:.4f}%</td>
+<td>{c['param']:.4f}%</td>
+</tr>"""
             crisis_table += "</tbody></table>"
             st.markdown(crisis_table, unsafe_allow_html=True)
 
@@ -876,22 +872,20 @@ def main():
             'Parametric VaR (%)': f"{p_var:.4f}",
         })
 
-    stock_table = """
-    <table class="styled-table">
-        <thead><tr>
-            <th>Stock</th><th>Mean Return</th><th>Volatility</th>
-            <th>Historical VaR</th><th>Parametric VaR</th>
-        </tr></thead><tbody>
-    """
+    stock_table = """<table class="styled-table">
+<thead><tr>
+<th>Stock</th><th>Mean Return</th><th>Volatility</th>
+<th>Historical VaR</th><th>Parametric VaR</th>
+</tr></thead><tbody>
+"""
     for row in stock_data:
-        stock_table += f"""
-        <tr>
-            <td style="font-weight:600;">{row['Stock']}</td>
-            <td>{row['Mean Return (%)']}</td>
-            <td>{row['Volatility (%)']}</td>
-            <td>{row['Historical VaR (%)']}</td>
-            <td>{row['Parametric VaR (%)']}</td>
-        </tr>"""
+        stock_table += f"""<tr>
+<td style="font-weight:600;">{row['Stock']}</td>
+<td>{row['Mean Return (%)']}</td>
+<td>{row['Volatility (%)']}</td>
+<td>{row['Historical VaR (%)']}</td>
+<td>{row['Parametric VaR (%)']}</td>
+</tr>"""
     stock_table += "</tbody></table>"
     st.markdown(stock_table, unsafe_allow_html=True)
 
