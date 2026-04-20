@@ -836,8 +836,7 @@ def main():
         textfont=dict(size=11, color='white'),
         hovertemplate='%{x} vs %{y}<br>Correlation: %{z:.4f}<extra></extra>',
         colorbar=dict(
-            title="ρ",
-            titlefont=dict(color='#e0e0ff'),
+            title=dict(text="ρ", font=dict(color='#e0e0ff')),
             tickfont=dict(color='#a0a0a0'),
         ),
     ))
